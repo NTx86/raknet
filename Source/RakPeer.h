@@ -750,6 +750,7 @@ protected:
 
 	// Nobody would use the internet simulator in a final build.
 #ifndef _RELEASE
+	unsigned int maxOutgoingBPS;
 	double _maxSendBPS;
 	unsigned short _minExtraPing, _extraPingVariance;
 #endif

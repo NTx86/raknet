@@ -21,6 +21,7 @@
 #ifdef _WIN32
 //#include <Shlwapi.h>
 #include <process.h>
+#include <malloc.h>
 #else
 #define closesocket close
 #include <unistd.h>
@@ -376,9 +377,9 @@ bool RakPeer::Startup( unsigned short maxConnections, int _threadSleepTimer, Soc
 
 				// SetThreadPriority(processPacketsThreadHandle, THREAD_PRIORITY_HIGHEST);
 
-				CloseHandle( processPacketsThreadHandle );
+				//CloseHandle( processPacketsThreadHandle );
 
-				processPacketsThreadHandle = 0;
+				//processPacketsThreadHandle = 0;
 
 			}
 
@@ -4711,7 +4712,7 @@ void* UpdateNetworkLoop( void* arguments )
 
 	// 11/15/05 - this is slower than Sleep()
 #ifdef _WIN32
-#if (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400)
+/*#if (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400)
 	// Lets see if these timers give better performance than Sleep
 	HANDLE timerHandle;
 	LARGE_INTEGER dueTime;
@@ -4730,7 +4731,7 @@ void* UpdateNetworkLoop( void* arguments )
 
 	assert( success );
 
-#endif
+#endif*/
 #endif
 
 #ifdef _RAKNET_THREADSAFE

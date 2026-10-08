@@ -327,6 +327,8 @@ private:
 	// In the meantime the connection is flooded and overrun.
 	RakNetTimeNS nextAllowedThroughputSample;
 
+	RakNetTimeNS throughputCapCountdown; //missing
+
 	DataBlockEncryptor encryptor;
 	unsigned sendPacketCount, receivePacketCount;
 
